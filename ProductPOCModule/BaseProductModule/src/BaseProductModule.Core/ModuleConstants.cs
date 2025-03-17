@@ -1,7 +1,6 @@
-﻿namespace BaseProductModule.Core
-{
-    public class ModuleConstants
-    {
+﻿namespace BaseProductModule.Core;
 
-    }
+public class ModuleConstants
+{
+
 }
