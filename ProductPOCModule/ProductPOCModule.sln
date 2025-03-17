@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Core", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Data", "BaseProductModule\src\BaseProductModule.Data\BaseProductModule.Data.csproj", "{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Web", "BaseProductModule\src\BaseProductModule.Web\BaseProductModule.Web.csproj", "{0338A6E6-3E06-460A-BCF9-46ABC477EED4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Tests", "BaseProductModule\tests\BaseProductModule.Tests\BaseProductModule.Tests.csproj", "{164F0E7A-BF96-4F7F-873F-22557E50CDE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,5 +66,7 @@ Global
 		{58961006-6FFC-4AE4-9606-2105AAA4367F} = {D145687C-BD4B-4056-974F-3DE16F4087D6}
 		{327EAB25-4804-443B-9E0F-EDB89D26244A} = {24C82B73-116B-4215-A6BC-1982E2658422}
 		{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E} = {24C82B73-116B-4215-A6BC-1982E2658422}
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4} = {24C82B73-116B-4215-A6BC-1982E2658422}
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2} = {5686EB53-6BE1-4A23-ADD9-9B4D2EE5BD97}
 	EndGlobalSection
 EndGlobal
