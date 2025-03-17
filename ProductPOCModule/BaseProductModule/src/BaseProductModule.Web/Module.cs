@@ -1,6 +1,4 @@
-﻿using BaseProductModule.Core.Services;
-using BaseProductModule.Data.Repositories;
-using BaseProductModule.Data.Services;
+﻿using BaseProductModule.Data.Repositories;
 using VirtoCommerce.Platform.Data.SqlServer.Extensions;
 using VirtoCommerce.Platform.Core.Modularity;
 using Microsoft.EntityFrameworkCore;
@@ -19,10 +17,10 @@ public class Module : IModule , IHasConfiguration
         serviceCollection.AddDbContext<BaseProductDbContext>(options =>
             options.UseSqlServerDatabase(connectionString, typeof(SqlServerDataAssemblyMarker), Configuration));
 
-        serviceCollection.AddTransient<IProductRepository, ProductRepository>();
+        //serviceCollection.AddTransient<IProductRepository, ProductRepository>();
 
-        // Register services
-        serviceCollection.AddTransient<IBaseProductService, BaseProductService>();
+        //// Register services
+        //serviceCollection.AddTransient<IBaseProductService, BaseProductService>();
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)

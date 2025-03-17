@@ -22,11 +22,6 @@ public class BaseProductDbContext : DbContextWithTriggers
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<ProductEntity>()
-            .ToTable("Products");
-
-        modelBuilder.Entity<ProductEntity>()
-        .Property(p => p.Price)
-        .HasColumnType("decimal(18,4)");
+        
     }
 }

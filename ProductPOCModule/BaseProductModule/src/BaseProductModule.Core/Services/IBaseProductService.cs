@@ -2,11 +2,11 @@
 
 namespace BaseProductModule.Core.Services;
 
-public interface IBaseProductService
+public interface IBaseProductService<T> where T : class
 {
-    Task<Product> GetByIdAsync(string id);
-    Task<List<Product>> GetAllAsync();
-    Task<Product> CreateAsync(Product product);
-    Task<Product> UpdateAsync(string id, Product product);
+    Task<T> GetByIdAsync(string id);
+    Task<List<T>> GetAllAsync();
+    Task<T> CreateAsync(T product);
+    Task<T> UpdateAsync(string id, T product);
     Task DeleteAsync(int id);
 }

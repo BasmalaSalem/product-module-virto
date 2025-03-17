@@ -3,11 +3,11 @@ using VirtoCommerce.Platform.Core.Common;
 
 namespace BaseProductModule.Data.Repositories;
 
-public interface IProductRepository : IRepository
+public interface IProductRepository<T> : IRepository
 {
-    Task<Product> GetProductByIdAsync(string id);
-    Task<List<Product>> GetProductsAsync();
-    Task DeleteProductByIdAsync(string id);
-    Task<Product> UpdateProductAsync(string id, Product product);
-    Task<Product> CreateProductAsync(Product product);
+    public Task<T> GetProductByIdAsync(string id);
+    public Task<List<T>> GetProductsAsync();
+    public Task DeleteProductByIdAsync(string id);
+    public Task<T> UpdateProductAsync(string id, T product);
+    public Task<T> CreateProductAsync(T product);
 }

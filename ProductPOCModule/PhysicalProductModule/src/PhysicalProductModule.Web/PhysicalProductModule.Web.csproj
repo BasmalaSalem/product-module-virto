@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BaseProductModule\src\BaseProductModule.Data\BaseProductModule.Data.csproj" />
     <ProjectReference Include="..\PhysicalProductModule.Data\PhysicalProductModule.Data.csproj" />
   </ItemGroup>
 

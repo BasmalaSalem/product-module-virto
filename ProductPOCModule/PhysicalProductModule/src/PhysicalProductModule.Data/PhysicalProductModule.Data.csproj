@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BaseProductModule\src\BaseProductModule.Data\BaseProductModule.Data.csproj" />
     <ProjectReference Include="..\PhysicalProductModule.Core\PhysicalProductModule.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

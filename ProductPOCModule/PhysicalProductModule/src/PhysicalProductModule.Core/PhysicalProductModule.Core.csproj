@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\..\..\BaseProductModule\src\BaseProductModule.Core\BaseProductModule.Core.csproj" />
   </ItemGroup>
 
 </Project>

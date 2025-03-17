@@ -9,6 +9,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
     public string Name { get; set; } = string.Empty;
     public decimal Price { get; set; }
     public string Description { get; set; } = string.Empty;
+    public Dictionary<string, object> MetaData { get; set; } = new Dictionary<string, object>();
 
     public ProductEntity FromModel(Product model, PrimaryKeyResolvingMap pkMap)
     {
@@ -18,6 +19,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         Name = model.Name;
         Description = model.Description;
         Price = model.Price;
+        MetaData = model.MetaData;
         return this;
 
     }
@@ -27,6 +29,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         target.Name = Name;
         target.Description = Description;
         target.Price = Price;
+        target.MetaData = MetaData;
     }
 
     public Product ToModel(Product model)
@@ -35,6 +38,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         model.Name = Name;
         model.Description = Description;
         model.Price = Price;
+        model.MetaData = MetaData;
         return model;
     }
 }
