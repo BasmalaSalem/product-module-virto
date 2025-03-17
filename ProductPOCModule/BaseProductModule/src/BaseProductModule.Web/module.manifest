@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<module>
+	<id>ProductModule</id>
+	<title>ProductModule</title>
+	<version>1.0.0</version>
+	<platformVersion>3.62.0</platformVersion>
+	<assemblyFile>BaseProductModule.Web.dll</assemblyFile>
+	<moduleType>BaseProductModule.Web.Web.Module, BaseProductModule.Web.Web</moduleType>
+</module>

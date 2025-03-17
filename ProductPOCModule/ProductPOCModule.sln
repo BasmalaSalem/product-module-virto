@@ -27,25 +27,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseProductModule.Core", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseProductModule.Data", "BaseProductModule\src\BaseProductModule.Data\BaseProductModule.Data.csproj", "{5E0FE1B6-20EA-49E6-88F0-AA2178AC497E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalProductModule.Core", "PhysicalProductModule\src\PhysicalProductModule.Core\PhysicalProductModule.Core.csproj", "{AEA92B55-CBEE-4912-86BA-D9A9923DC011}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalProductModule.Core", "PhysicalProductModule\src\PhysicalProductModule.Core\PhysicalProductModule.Core.csproj", "{AEA92B55-CBEE-4912-86BA-D9A9923DC011}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalProductModule.Data", "PhysicalProductModule\src\PhysicalProductModule.Data\PhysicalProductModule.Data.csproj", "{AF2B647F-2A51-4709-A9A3-CD464A6674F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalProductModule.Data", "PhysicalProductModule\src\PhysicalProductModule.Data\PhysicalProductModule.Data.csproj", "{AF2B647F-2A51-4709-A9A3-CD464A6674F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalProductModule.Web", "PhysicalProductModule\src\PhysicalProductModule.Web\PhysicalProductModule.Web.csproj", "{A104ED98-4355-4A58-A028-EDD2EB4050EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalProductModule.Web", "PhysicalProductModule\src\PhysicalProductModule.Web\PhysicalProductModule.Web.csproj", "{A104ED98-4355-4A58-A028-EDD2EB4050EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalProductModule.Tests", "PhysicalProductModule\tests\PhysicalProductModule.Tests\PhysicalProductModule.Tests.csproj", "{38ACC778-8DF5-44DF-AED5-FCA236B19629}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhysicalProductModule.Tests", "PhysicalProductModule\tests\PhysicalProductModule.Tests\PhysicalProductModule.Tests.csproj", "{38ACC778-8DF5-44DF-AED5-FCA236B19629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProductModule.Core", "ServiceProductModule\src\ServiceProductModule.Core\ServiceProductModule.Core.csproj", "{B07A8867-29A0-4A3A-BC8E-1CF5465F3AFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProductModule.Core", "ServiceProductModule\src\ServiceProductModule.Core\ServiceProductModule.Core.csproj", "{B07A8867-29A0-4A3A-BC8E-1CF5465F3AFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProductModule.Data", "ServiceProductModule\src\ServiceProductModule.Data\ServiceProductModule.Data.csproj", "{EEEA483C-0F01-4246-AB6B-F6AFFFEF688F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProductModule.Data", "ServiceProductModule\src\ServiceProductModule.Data\ServiceProductModule.Data.csproj", "{EEEA483C-0F01-4246-AB6B-F6AFFFEF688F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProductModule.Web", "ServiceProductModule\src\ServiceProductModule.Web\ServiceProductModule.Web.csproj", "{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceProductModule.Web", "ServiceProductModule\src\ServiceProductModule.Web\ServiceProductModule.Web.csproj", "{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProductModule.Tests", "ServicceProductModule\tests\ServiceProductModule.Tests\ServiceProductModule.Tests.csproj", "{88981784-32B2-4550-9839-A2320760E384}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseProductModule.Web", "BaseProductModule\src\BaseProductModule.Web\BaseProductModule.Web.csproj", "{0338A6E6-3E06-460A-BCF9-46ABC477EED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Web", "BaseProductModule\src\BaseProductModule.Web\BaseProductModule.Web.csproj", "{0338A6E6-3E06-460A-BCF9-46ABC477EED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseProductModule.Tests", "BaseProductModule\tests\BaseProductModule.Tests\BaseProductModule.Tests.csproj", "{164F0E7A-BF96-4F7F-873F-22557E50CDE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProductModule.Tests", "BaseProductModule\tests\BaseProductModule.Tests\BaseProductModule.Tests.csproj", "{164F0E7A-BF96-4F7F-873F-22557E50CDE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceProductModule.Tests", "ServiceProductModule\tests\ServiceProductModule.Tests\ServiceProductModule.Tests.csproj", "{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,10 +89,6 @@ Global
 		{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88981784-32B2-4550-9839-A2320760E384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88981784-32B2-4550-9839-A2320760E384}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88981784-32B2-4550-9839-A2320760E384}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88981784-32B2-4550-9839-A2320760E384}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0338A6E6-3E06-460A-BCF9-46ABC477EED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -101,6 +97,10 @@ Global
 		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{164F0E7A-BF96-4F7F-873F-22557E50CDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,13 +121,13 @@ Global
 		{B07A8867-29A0-4A3A-BC8E-1CF5465F3AFD} = {BA0FD039-8A48-4ED1-8C96-FFD531A24F4F}
 		{EEEA483C-0F01-4246-AB6B-F6AFFFEF688F} = {BA0FD039-8A48-4ED1-8C96-FFD531A24F4F}
 		{0D0AD38A-176C-447C-81BF-9D25FA6F0CA2} = {BA0FD039-8A48-4ED1-8C96-FFD531A24F4F}
-		{88981784-32B2-4550-9839-A2320760E384} = {58961006-6FFC-4AE4-9606-2105AAA4367F}
 		{0338A6E6-3E06-460A-BCF9-46ABC477EED4} = {24C82B73-116B-4215-A6BC-1982E2658422}
 		{164F0E7A-BF96-4F7F-873F-22557E50CDE2} = {5686EB53-6BE1-4A23-ADD9-9B4D2EE5BD97}
+		{DF8DADB6-A17C-45B2-B05C-F602E1DA4BA9} = {58961006-6FFC-4AE4-9606-2105AAA4367F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		{164F0E7A-BF96-4F7F-873F-22557E50CDE2} = {5686EB53-6BE1-4A23-ADD9-9B4D2EE5BD97}
-		{0338A6E6-3E06-460A-BCF9-46ABC477EED4} = {24C82B73-116B-4215-A6BC-1982E2658422}
 		SolutionGuid = {27371802-3B5C-4B36-BB24-0C15DF185242}
+		{0338A6E6-3E06-460A-BCF9-46ABC477EED4} = {24C82B73-116B-4215-A6BC-1982E2658422}
+		{164F0E7A-BF96-4F7F-873F-22557E50CDE2} = {5686EB53-6BE1-4A23-ADD9-9B4D2EE5BD97}
 	EndGlobalSection
 EndGlobal
