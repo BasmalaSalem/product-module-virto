@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseProductModule.Core\BaseProductModule.Core.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.14" />
+    <PackageReference Include="VirtoCommerce.Platform.Data" Version="3.880.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\BaseProductModule.Core\BaseProductModule.Core.csproj" />
   </ItemGroup>
 
 </Project>
