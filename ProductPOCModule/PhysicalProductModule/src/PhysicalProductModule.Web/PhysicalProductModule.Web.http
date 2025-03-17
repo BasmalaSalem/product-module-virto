@@ -1,0 +1,6 @@
+@PhysicalProductModule.Web_HostAddress = http://localhost:5039
+
+GET {{PhysicalProductModule.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
