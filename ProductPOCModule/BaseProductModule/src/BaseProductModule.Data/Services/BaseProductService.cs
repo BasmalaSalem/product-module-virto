@@ -22,9 +22,9 @@ public class BaseProductService : IBaseProductService
         return await _productRepository.CreateAsync(product);
     }
 
-    public async Task DeleteProductAsync(int id)
+    public async Task DeleteProductAsync(string id)
     {
-        await _productRepository.DeleteAsync(id.ToString());
+        await _productRepository.DeleteAsync(id);
     }
 
     public async Task<List<Product>> GetAllProductsAsync()

@@ -8,5 +8,5 @@ public interface IBaseProductService
     Task<List<Product>> GetAllProductsAsync();
     Task<Product> CreateProductAsync(Product product);
     Task<Product> UpdateProductAsync(string id, Product product);
-    Task DeleteProductAsync(int id);
+    Task DeleteProductAsync(string id);
 }

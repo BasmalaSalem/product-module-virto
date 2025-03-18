@@ -1,6 +1,7 @@
 ﻿using BaseProductModule.Data.Model;
 using EntityFrameworkCore.Triggers;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,13 @@ public class BaseProductDbContext : DbContextWithTriggers
     {
         modelBuilder.Entity<ProductEntity>()
            .ToTable("Produts");
+
+        modelBuilder.Entity<ProductEntity>()
+            .Property(p => p.MetaData)
+            .HasConversion(
+                v => JsonConvert.SerializeObject(v), // Convert to JSON string
+                v => JsonConvert.DeserializeObject<Dictionary<string, object>>(v)) // Convert from JSON string
+            .HasColumnType("nvarchar(max)");
 
         modelBuilder.Entity<ProductEntity>()
         .Property(p => p.Price)
