@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaseProductModule.Data.Repositories;
 
-public class SqlServerDbContextFactory : IDesignTimeDbContextFactory<BaseProductDbContext>
+public class BaseSqlServerDbContextFactory : IDesignTimeDbContextFactory<BaseProductDbContext>
 {
     public BaseProductDbContext CreateDbContext(string[] args)
     {
