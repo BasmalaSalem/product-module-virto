@@ -44,5 +44,5 @@ public interface IBaseProductService
     /// <param name="id">The numeric identifier of the product to delete</param>
     /// <returns>A <see cref="Task"/> representing the completion of the asynchronous operation</returns>
     /// <exception cref="KeyNotFoundException">Thrown when no product exists with the specified identifier</exception>
-    Task DeleteProductAsync(int id);
+    Task DeleteProductAsync(string id);
 }

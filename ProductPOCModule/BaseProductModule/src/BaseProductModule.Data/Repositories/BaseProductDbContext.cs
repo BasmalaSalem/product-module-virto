@@ -1,6 +1,7 @@
 ﻿using BaseProductModule.Data.Model;
 using EntityFrameworkCore.Triggers;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace BaseProductModule.Data.Repositories;
 
