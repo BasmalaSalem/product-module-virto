@@ -35,12 +35,17 @@ public class BaseProductDbContext : DbContextWithTriggers
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ProductEntity>()
-           .ToTable("Produts"); // Typo: Should be "Products" instead of "Produts"
+           .ToTable("Produts")
+           .HasKey(p=>p.Id);
 
+        modelBuilder.Entity<ProductEntity>()
+            .Property(p => p.Id)
+            .ValueGeneratedOnAdd();
+            
         modelBuilder.Entity<ProductEntity>()
             .Property(p => p.MetaData)
             .HasConversion(
-                v => JsonConvert.SerializeObject(v), // Convert to JSON string
+                v => JsonConvert.SerializeObject(v), 
                 v => JsonConvert.DeserializeObject<Dictionary<string, object>>(v)) // Convert from JSON string
             .HasColumnType("nvarchar(max)");
 
