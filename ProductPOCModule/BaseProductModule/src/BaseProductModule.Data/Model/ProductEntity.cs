@@ -1,4 +1,6 @@
 using BaseProductModule.Core.Model;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Domain;
 
@@ -27,8 +29,9 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
     /// <summary>
     /// Gets or sets additional metadata for the product.
     /// </summary>
-    public Dictionary<string, object> MetaData { get; set; } = new Dictionary<string, object>();
+    public Dictionary<string,string> MetaData { get; set; } 
 
+    
     /// <summary>
     /// Maps data from a <see cref="Product"/> model to this entity.
     /// </summary>

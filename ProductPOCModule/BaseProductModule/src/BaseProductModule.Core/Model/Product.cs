@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using VirtoCommerce.Platform.Core.Common;
 
 namespace BaseProductModule.Core.Model;
@@ -27,7 +29,18 @@ public class Product : AuditableEntity, ICloneable
     /// <summary>
     /// Gets or sets additional metadata for the product.
     /// </summary>
-    public Dictionary<string, object> MetaData { get; set; } = new Dictionary<string, object>();
+    /// 
+    [Column(TypeName = "nvarchar(max)")]
+    public Dictionary<string, string> MetaData { get; set; }
+
+    //[NotMapped]
+    //public Dictionary<string, object> MetaData
+    //{
+    //    get => string.IsNullOrEmpty(MetaDataJson)
+    //        ? new Dictionary<string, object>()
+    //        : JsonConvert.DeserializeObject<Dictionary<string, object>>(MetaDataJson);
+    //    set => MetaDataJson = JsonConvert.SerializeObject(value);
+    //}
 
     /// <summary>
     /// Creates a shallow copy of the current product instance.

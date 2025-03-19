@@ -3,91 +3,15 @@ using BaseProductModule.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using PhysicalProductModule.Core.Model;
 using PhysicalProductModule.Data.Model;
-using VirtoCommerce.Platform.Data.Infrastructure;
+using PhysicalProductModule.Data.Repositories;
 
 namespace BaseProductModule.Data.Repositories;
 
-//public class PhysicalProductRepository : DbContextRepositoryBase<BaseProductDbContext>, IProductRepository<PhysicalProductEntity>
-//{
-//    public PhysicalProductRepository(BaseProductDbContext dbContext) : base(dbContext)
-//    {
-//    }
+public class PhysicalProductRepository : ProductRepository
+{
+    public PhysicalProductRepository(PhysicalProductDbContext dbContext) : base(dbContext)
+    {
 
-//    public IQueryable<PhysicalProductEntity> Products => DbContext.Set<PhysicalProductEntity>();
-//    public virtual async Task<PhysicalProduct> GetProductByIdAsync(string id)
-//    {
-//        var productEntity = await Products.FirstOrDefaultAsync(p => p.Id == id);
+    }
 
-//        if (productEntity is null)
-//        {
-//            throw new KeyNotFoundException($"Product with id '{id}' not found.");
-//        }
-
-//        var product = new PhysicalProduct { Name = productEntity.Name, Description = productEntity.Description, Price = productEntity.Price, Stock = productEntity.Stock, MetaData = productEntity.MetaData };
-
-//        return product;
-//    }
-
-//    public virtual async Task<List<PhysicalProduct>> GetProductsAsync()
-//    {
-//        var productsEntity = await Products.ToListAsync();
-
-//        if (productsEntity is null)
-//        {
-//            throw new KeyNotFoundException($"Products not found.");
-//        }
-
-//        var products = productsEntity.Select(p => new PhysicalProduct { Name = p.Name, Description = p.Description, Price = p.Price }).ToList();
-
-//        return products;
-//    }
-
-//    public virtual async Task DeleteProductByIdAsync(string id)
-//    {
-//        var productEntity = await Products.FirstOrDefaultAsync(p => p.Id == id);
-
-//        if (productEntity is null)
-//        {
-//            throw new KeyNotFoundException($"Product with id '{id}' not found.");
-//        }
-
-//        DbContext.Remove(productEntity);
-
-//        await DbContext.SaveChangesAsync();
-//    }
-
-//    public virtual async Task<PhysicalProduct> UpdateProductAsync(string id, PhysicalProduct product)
-//    {
-//        var productEntity = await Products.FirstOrDefaultAsync(p => p.Id == id);
-//        if (productEntity == null)
-//        {
-//            throw new KeyNotFoundException($"Product with id '{id}' not found.");
-//        }
-//        productEntity.Name = product.Name;
-//        productEntity.Price = product.Price;
-//        productEntity.Description = product.Description;
-//        productEntity.Stock = product.Stock;
-
-//        await DbContext.SaveChangesAsync();
-//        return product;
-//    }
-
-//    public virtual async Task<PhysicalProduct> CreateProductAsync(PhysicalProduct product)
-//    {
-//        var entity = new PhysicalProductEntity
-//        {
-//            Name = product.Name,
-//            Price = product.Price,
-//            Description = product.Description,
-//            Stock = product.Stock,
-//        };
-
-//        DbContext.Add(entity);
-
-//        await DbContext.SaveChangesAsync();
-
-//        return product;
-//    }
-
-    
-//}
+}

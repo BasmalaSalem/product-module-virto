@@ -19,7 +19,7 @@ public class BaseSqlServerDbContextFactory : IDesignTimeDbContextFactory<BasePro
 
         var connectionString = args.Length != 0
             ? args[0]
-            : "Data Source=(local);Initial Catalog=VirtoCommerce3;Persist Security Info=True;User ID=Mixed mode;Password=123;Connect Timeout=30;TrustServerCertificate=True;";
+            : "Data Source=(local);Initial Catalog=VirtoCommerce3.net8;Persist Security Info=True;User ID=Mixed mode;Password=123;Connect Timeout=30;TrustServerCertificate=True;";
 
         builder.UseSqlServer(
             connectionString,

@@ -1,4 +1,5 @@
-﻿using BaseProductModule.Data.Model;
+﻿using BaseProductModule.Core.Model;
+using BaseProductModule.Data.Model;
 using EntityFrameworkCore.Triggers;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
@@ -41,13 +42,15 @@ public class BaseProductDbContext : DbContextWithTriggers
         modelBuilder.Entity<ProductEntity>()
             .Property(p => p.Id)
             .ValueGeneratedOnAdd();
-            
+
         modelBuilder.Entity<ProductEntity>()
-            .Property(p => p.MetaData)
-            .HasConversion(
-                v => JsonConvert.SerializeObject(v), 
-                v => JsonConvert.DeserializeObject<Dictionary<string, object>>(v)) // Convert from JSON string
-            .HasColumnType("nvarchar(max)");
+        .Property(p => p.MetaData)
+        .HasConversion(
+            v => JsonConvert.SerializeObject(v),  // Serialize Dictionary to JSON string
+            v => JsonConvert.DeserializeObject<Dictionary<string, string>>(v) // Deserialize JSON string to Dictionary
+        );
+
+
 
         modelBuilder.Entity<ProductEntity>()
         .Property(p => p.Price)
