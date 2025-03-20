@@ -12,9 +12,9 @@ namespace BaseProductModule.Tests.Moq;
 
 public static class ProductRepositoryMoq
 {
-    public static Mock<IProductRepository> GetMock()
+    public static Mock<IProductRepository<Product>> GetMock()
     {
-        var mock = new Mock<IProductRepository>();
+        var mock = new Mock<IProductRepository<Product>>();
 
         // Mock data
         var products = new List<Product>

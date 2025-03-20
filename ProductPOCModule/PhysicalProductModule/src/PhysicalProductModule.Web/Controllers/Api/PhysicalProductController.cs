@@ -1,27 +1,21 @@
 ﻿using BaseProductModule.Core.Model;
 using BaseProductModule.Core.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PhysicalProductModule.Core.Model;
 
-namespace BaseProductModule.Web.Controllers.Api;
+namespace PhysicalProductModule.Web.Controllers.Api;
 
-/// <summary>
-/// Provides RESTful API endpoints for product management operations
-/// </summary>
-/// <remarks>
-/// Exposes standard CRUD operations for products through HTTP endpoints
-/// </remarks>
 [Route("api/[controller]")]
 [ApiController]
-public class BaseProductController : ControllerBase
+public class PhysicalProductController : ControllerBase
 {
-    private readonly IBaseProductService<Product> _productService;
+    private readonly IBaseProductService<PhysicalProduct> _productService;
 
     /// <summary>
     /// Initializes a new instance of the BaseProductController
     /// </summary>
     /// <param name="productService">The product service dependency</param>
-    public BaseProductController(IBaseProductService<Product> productService)
+    public PhysicalProductController(IBaseProductService<PhysicalProduct> productService)
     {
         _productService = productService;
     }
@@ -36,7 +30,7 @@ public class BaseProductController : ControllerBase
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<Product>> GetProductById(string id)
+    public async Task<ActionResult<PhysicalProduct>> GetProductById(string id)
     {
         return await _productService.GetProductByIdAsync(id);
     }
@@ -48,7 +42,7 @@ public class BaseProductController : ControllerBase
     /// <response code="200">Returns the complete product list</response>
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<List<Product>>> GetAllProducts()
+    public async Task<ActionResult<List<PhysicalProduct>>> GetAllProducts()
     {
         return await _productService.GetAllProductsAsync();
     }
@@ -63,7 +57,7 @@ public class BaseProductController : ControllerBase
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Product>> AddProduct(Product product)
+    public async Task<ActionResult<PhysicalProduct>> AddProduct(PhysicalProduct product)
     {
         var createdProduct = await _productService.CreateProductAsync(product);
         return CreatedAtAction(nameof(GetProductById), new { id = createdProduct.Id }, createdProduct);
@@ -82,7 +76,7 @@ public class BaseProductController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<Product>> UpdateProduct(string id, Product product)
+    public async Task<ActionResult<PhysicalProduct>> UpdateProduct(string id, PhysicalProduct product)
     {
         return await _productService.UpdateProductAsync(id, product);
     }

@@ -12,7 +12,7 @@ namespace BaseProductModule.Data.Repositories;
 /// <summary>
 /// Repository implementation for managing product data in the database.
 /// </summary>
-public class ProductRepository : DbContextRepositoryBase<BaseProductDbContext>, IProductRepository
+public class ProductRepository : DbContextRepositoryBase<BaseProductDbContext>, IProductRepository<Product>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ProductRepository"/> class.
@@ -44,7 +44,7 @@ public class ProductRepository : DbContextRepositoryBase<BaseProductDbContext>, 
     {
         var productsEntity = await Products.ToListAsync();
 
-        if (productsEntity is null || !productsEntity.Any())
+        if (productsEntity is null)
         {
             throw new KeyNotFoundException("No products found.");
         }

@@ -5,20 +5,20 @@ namespace BaseProductModule.Core.Services;
 /// <summary>
 /// Provides base operations for product management including CRUD operations
 /// </summary>
-public interface IBaseProductService
+public interface IBaseProductService<T> where T : class
 {
     /// <summary>
     /// Retrieves a single product by its unique identifier
     /// </summary>
     /// <param name="id">The unique identifier of the product to retrieve</param>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation, containing the found product or null</returns>
-    Task<Product> GetProductByIdAsync(string id);
+    Task<T> GetProductByIdAsync(string id);
 
     /// <summary>
     /// Retrieves all available products from the system
     /// </summary>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation, containing a list of all products</returns>
-    Task<List<Product>> GetAllProductsAsync();
+    Task<List<T>> GetAllProductsAsync();
 
     /// <summary>
     /// Creates a new product in the system
@@ -26,7 +26,7 @@ public interface IBaseProductService
     /// <param name="product">The product entity to create</param>
     /// <returns>A <see cref="Task"/> representing the asynchronous operation, containing the created product with generated identifier</returns>
     /// <exception cref="ArgumentException">Thrown when provided product data is invalid</exception>
-    Task<Product> CreateProductAsync(Product product);
+    Task<T> CreateProductAsync(T product);
 
     /// <summary>
     /// Updates an existing product with new data
@@ -36,7 +36,7 @@ public interface IBaseProductService
     /// <returns>A <see cref="Task"/> representing the asynchronous operation, containing the updated product entity</returns>
     /// <exception cref="KeyNotFoundException">Thrown when no product exists with the specified identifier</exception>
     /// <exception cref="ArgumentException">Thrown when provided product data is invalid</exception>
-    Task<Product> UpdateProductAsync(string id, Product product);
+    Task<T> UpdateProductAsync(string id, T product);
 
     /// <summary>
     /// Permanently deletes a product from the system

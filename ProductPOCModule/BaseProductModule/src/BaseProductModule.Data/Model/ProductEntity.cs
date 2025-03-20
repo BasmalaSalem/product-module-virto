@@ -1,4 +1,5 @@
 using BaseProductModule.Core.Model;
+using Newtonsoft.Json;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Domain;
 
@@ -72,6 +73,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         model.Description = Description;
         model.Price = Price;
         model.DynamicProperty = DynamicProperty;
+
         return model;
     }
 }

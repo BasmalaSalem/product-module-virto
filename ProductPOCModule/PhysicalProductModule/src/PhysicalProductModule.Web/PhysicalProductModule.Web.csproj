@@ -24,8 +24,4 @@
     <ProjectReference Include="..\PhysicalProductModule.Data\PhysicalProductModule.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Api\" />
-  </ItemGroup>
-
 </Project>

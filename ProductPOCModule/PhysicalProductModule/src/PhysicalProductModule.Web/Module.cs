@@ -1,10 +1,12 @@
 ﻿using BaseProductModule.Core.Model;
+using BaseProductModule.Core.Services;
 using BaseProductModule.Data.Model;
 using BaseProductModule.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using PhysicalProductModule.Core.Model;
 using PhysicalProductModule.Data.Model;
 using PhysicalProductModule.Data.Repositories;
+using PhysicalProductModule.Data.Services;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.JsonConverters;
 using VirtoCommerce.Platform.Core.Modularity;
@@ -24,19 +26,15 @@ public class Module : IModule , IHasConfiguration
         serviceCollection.AddDbContext<PhysicalProductDbContext>(options =>
             options.UseSqlServerDatabase(connectionString, typeof(Data.Repositories.SqlServerDataAssemblyMarker), Configuration));
     
-       serviceCollection.AddTransient<IProductRepository, PhysicalProductRepository>();
+       serviceCollection.AddTransient<IProductRepository<PhysicalProduct>, PhysicalProductRepository>();
 
-        serviceCollection.AddMvc().AddNewtonsoftJson(option =>
-        {
-            option.SerializerSettings.Converters.Add(new PolymorphJsonConverter());
-        });
+       serviceCollection.AddTransient<IBaseProductService<PhysicalProduct>, PhysicalProductService>();
+
+
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)
-    {
-
-        AbstractTypeFactory<Product>.OverrideType<Product, PhysicalProduct>();
-        AbstractTypeFactory<ProductEntity>.OverrideType<ProductEntity, PhysicalProductEntity>();
+    { 
 
         var serviceProvider = appBuilder.ApplicationServices;
 
