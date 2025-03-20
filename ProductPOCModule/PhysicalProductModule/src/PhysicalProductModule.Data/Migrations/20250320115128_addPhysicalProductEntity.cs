@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PhysicalProductModule.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddPhysicalProductEntity : Migration
+    public partial class addPhysicalProductEntity : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,9 +22,9 @@ namespace PhysicalProductModule.Data.Migrations
                     CreatedBy = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
                     ModifiedBy = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: true),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MetaData = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DynamicProperty = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

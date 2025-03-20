@@ -1,6 +1,4 @@
 using BaseProductModule.Core.Model;
-using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations.Schema;
 using VirtoCommerce.Platform.Core.Common;
 using VirtoCommerce.Platform.Core.Domain;
 
@@ -29,7 +27,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
     /// <summary>
     /// Gets or sets additional metadata for the product.
     /// </summary>
-    public Dictionary<string,string> MetaData { get; set; } 
+    public Dictionary<string, string> DynamicProperty { get; set; } = new Dictionary<string, string>();
 
     
     /// <summary>
@@ -46,7 +44,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         Name = model.Name;
         Description = model.Description;
         Price = model.Price;
-        MetaData = model.MetaData;
+        DynamicProperty = model.DynamicProperty;
         return this;
     }
 
@@ -59,7 +57,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         target.Name = Name;
         target.Description = Description;
         target.Price = Price;
-        target.MetaData = MetaData;
+        target.DynamicProperty = DynamicProperty;
     }
 
     /// <summary>
@@ -73,7 +71,7 @@ public class ProductEntity : AuditableEntity, IDataEntity<ProductEntity, Product
         model.Name = Name;
         model.Description = Description;
         model.Price = Price;
-        model.MetaData = MetaData;
+        model.DynamicProperty = DynamicProperty;
         return model;
     }
 }

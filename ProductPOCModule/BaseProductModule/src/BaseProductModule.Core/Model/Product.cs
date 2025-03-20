@@ -29,18 +29,9 @@ public class Product : AuditableEntity, ICloneable
     /// <summary>
     /// Gets or sets additional metadata for the product.
     /// </summary>
-    /// 
-    [Column(TypeName = "nvarchar(max)")]
-    public Dictionary<string, string> MetaData { get; set; }
+   
+    public Dictionary<string, string> DynamicProperty { get; set; } = new Dictionary<string, string>();
 
-    //[NotMapped]
-    //public Dictionary<string, object> MetaData
-    //{
-    //    get => string.IsNullOrEmpty(MetaDataJson)
-    //        ? new Dictionary<string, object>()
-    //        : JsonConvert.DeserializeObject<Dictionary<string, object>>(MetaDataJson);
-    //    set => MetaDataJson = JsonConvert.SerializeObject(value);
-    //}
 
     /// <summary>
     /// Creates a shallow copy of the current product instance.

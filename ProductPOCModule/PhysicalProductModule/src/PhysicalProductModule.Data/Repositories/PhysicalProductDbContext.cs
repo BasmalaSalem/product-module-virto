@@ -23,17 +23,22 @@ public class PhysicalProductDbContext : BaseProductDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<PhysicalProductEntity>()
-            .ToTable("PhysicalProduts");
+            .ToTable("PhysicalProduts")
+            .HasKey(p => p.Id); 
 
         modelBuilder.Entity<PhysicalProductEntity>()
-       .Property(p => p.MetaData)
-       .HasConversion(
-           v => JsonConvert.SerializeObject(v),  // Serialize Dictionary to JSON string
-           v => JsonConvert.DeserializeObject<Dictionary<string, string>>(v) // Deserialize JSON string to Dictionary
-       );
+           .Property(p => p.Id)
+           .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<PhysicalProductEntity>()
+         .Property(p => p.DynamicProperty)
+         .HasConversion(
+             v => JsonConvert.SerializeObject(v),  // Serialize Dictionary to JSON string
+             v => JsonConvert.DeserializeObject<Dictionary<string, string>>(v) // Deserialize JSON string to Dictionary
+         ).HasColumnType("nvarchar(max)");
 
 
-       modelBuilder.Entity<ProductEntity>()
+        modelBuilder.Entity<PhysicalProductEntity>()
         .Property(p => p.Price)
         .HasColumnType("decimal(18,4)");
     }

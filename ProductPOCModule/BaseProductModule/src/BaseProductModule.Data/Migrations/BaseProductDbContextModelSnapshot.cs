@@ -39,7 +39,7 @@ namespace BaseProductModule.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MetaData")
+                    b.Property<string>("DynamicProperty")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

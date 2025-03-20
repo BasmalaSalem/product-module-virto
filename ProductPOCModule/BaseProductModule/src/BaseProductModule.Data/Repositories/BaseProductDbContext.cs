@@ -37,23 +37,23 @@ public class BaseProductDbContext : DbContextWithTriggers
     {
         modelBuilder.Entity<ProductEntity>()
            .ToTable("Produts")
-           .HasKey(p=>p.Id);
+           .HasKey(p => p.Id);
 
         modelBuilder.Entity<ProductEntity>()
             .Property(p => p.Id)
             .ValueGeneratedOnAdd();
 
         modelBuilder.Entity<ProductEntity>()
-        .Property(p => p.MetaData)
+        .Property(p => p.DynamicProperty)
         .HasConversion(
             v => JsonConvert.SerializeObject(v),  // Serialize Dictionary to JSON string
             v => JsonConvert.DeserializeObject<Dictionary<string, string>>(v) // Deserialize JSON string to Dictionary
-        );
+        ).HasColumnType("nvarchar(max)");
 
 
 
         modelBuilder.Entity<ProductEntity>()
-        .Property(p => p.Price)
-        .HasColumnType("decimal(18,4)");
+      .Property(p => p.Price)
+      .HasColumnType("decimal(18,4)");
     }
 }

@@ -12,8 +12,8 @@ using PhysicalProductModule.Data.Repositories;
 namespace PhysicalProductModule.Data.Migrations
 {
     [DbContext(typeof(PhysicalProductDbContext))]
-    [Migration("20250319120800_AddPhysicalProductEntity")]
-    partial class AddPhysicalProductEntity
+    [Migration("20250320115128_addPhysicalProductEntity")]
+    partial class addPhysicalProductEntity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,6 +28,7 @@ namespace PhysicalProductModule.Data.Migrations
             modelBuilder.Entity("PhysicalProductModule.Data.Model.PhysicalProductEntity", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatedBy")
@@ -41,7 +42,7 @@ namespace PhysicalProductModule.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MetaData")
+                    b.Property<string>("DynamicProperty")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -57,7 +58,7 @@ namespace PhysicalProductModule.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");

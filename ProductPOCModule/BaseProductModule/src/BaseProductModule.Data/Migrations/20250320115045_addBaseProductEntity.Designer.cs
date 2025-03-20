@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BaseProductModule.Data.Migrations
 {
     [DbContext(typeof(BaseProductDbContext))]
-    [Migration("20250319114400_AddBaseProductEntity")]
-    partial class AddBaseProductEntity
+    [Migration("20250320115045_addBaseProductEntity")]
+    partial class addBaseProductEntity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,7 +42,7 @@ namespace BaseProductModule.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MetaData")
+                    b.Property<string>("DynamicProperty")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

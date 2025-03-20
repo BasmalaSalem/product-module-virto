@@ -25,6 +25,7 @@ namespace PhysicalProductModule.Data.Migrations
             modelBuilder.Entity("PhysicalProductModule.Data.Model.PhysicalProductEntity", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreatedBy")
@@ -38,7 +39,7 @@ namespace PhysicalProductModule.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MetaData")
+                    b.Property<string>("DynamicProperty")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -54,7 +55,7 @@ namespace PhysicalProductModule.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,4)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
