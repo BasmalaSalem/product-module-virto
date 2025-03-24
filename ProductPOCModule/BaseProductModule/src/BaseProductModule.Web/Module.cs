@@ -50,6 +50,9 @@ public class Module : IModule, IHasConfiguration
 
         // Register services
         serviceCollection.AddTransient<IBaseProductService<Product>, BaseProductService>();
+
+        serviceCollection.AddTransient<IProductRegistrar, BaseProductService>();
+
     }
 
     /// <summary>
@@ -64,12 +67,17 @@ public class Module : IModule, IHasConfiguration
     {
         var serviceProvider = appBuilder.ApplicationServices;
 
+        var productsRegistrar = appBuilder.ApplicationServices.GetRequiredService<IProductRegistrar>();
+
+        productsRegistrar.RegisterProduct<Product>();
+
         // Apply migrations
         using var serviceScope = serviceProvider.CreateScope();
 
         using var dbContext = serviceScope.ServiceProvider.GetRequiredService<BaseProductDbContext>();
 
         dbContext.Database.Migrate();
+
     }
 
     /// <summary>

@@ -1,6 +1,8 @@
-﻿using BaseProductModule.Core.Services;
+﻿using BaseProductModule.Core.Model;
+using BaseProductModule.Core.Services;
 using BaseProductModule.Data.Repositories;
 using PhysicalProductModule.Core.Model;
+using VirtoCommerce.Platform.Core.Common;
 
 namespace PhysicalProductModule.Data.Services;
 
@@ -10,7 +12,7 @@ namespace PhysicalProductModule.Data.Services;
 /// <remarks>
 /// This service delegates data persistence operations to an <see cref="IProductRepository"/> implementation
 /// </remarks>
-public class PhysicalProductService : IBaseProductService<PhysicalProduct>
+public class PhysicalProductService : IBaseProductService<PhysicalProduct> 
 {
     private readonly IProductRepository<PhysicalProduct> _productRepository;
 

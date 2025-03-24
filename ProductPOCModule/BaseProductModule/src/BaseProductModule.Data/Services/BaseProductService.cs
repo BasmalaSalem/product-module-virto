@@ -1,12 +1,7 @@
 ﻿using BaseProductModule.Core.Model;
 using BaseProductModule.Core.Services;
-using BaseProductModule.Data.Model;
 using BaseProductModule.Data.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using VirtoCommerce.Platform.Core.Common;
 
 namespace BaseProductModule.Data.Services;
 
@@ -16,7 +11,7 @@ namespace BaseProductModule.Data.Services;
 /// <remarks>
 /// This service delegates data persistence operations to an <see cref="IProductRepository"/> implementation
 /// </remarks>
-public class BaseProductService : IBaseProductService<Product>
+public class BaseProductService : IBaseProductService<Product>, IProductRegistrar
 {
     private readonly IProductRepository<Product> _productRepository;
 
@@ -66,6 +61,27 @@ public class BaseProductService : IBaseProductService<Product>
     public async Task<Product> GetProductByIdAsync(string id)
     {
         return await _productRepository.GetByIdAsync(id);
+    }
+
+    public Task<Product[]> GetRegisteredProducts()
+    {
+        var result = AbstractTypeFactory<Product>.AllTypeInfos
+                        .Select(x => AbstractTypeFactory<Product>.TryCreateInstance(x.Type.Name))
+                        .ToArray();
+
+        return Task.FromResult(result);
+    }
+
+    public void RegisterProduct<T>(Func<T> factory = null) where T : Product
+    {
+        if (AbstractTypeFactory<Product>.AllTypeInfos.All(t => t.Type != typeof(T)))
+        {
+            var typeInfo = AbstractTypeFactory<Product>.RegisterType<T>();
+            if (factory != null)
+            {
+                typeInfo.WithFactory(factory);
+            }
+        }
     }
 
     /// <inheritdoc/>

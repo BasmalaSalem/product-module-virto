@@ -2,6 +2,7 @@
 using BaseProductModule.Core.Services;
 using BaseProductModule.Data.Model;
 using BaseProductModule.Data.Repositories;
+using BaseProductModule.Data.Services;
 using Microsoft.EntityFrameworkCore;
 using PhysicalProductModule.Core.Model;
 using PhysicalProductModule.Data.Model;
@@ -31,6 +32,7 @@ public class Module : IModule , IHasConfiguration
        serviceCollection.AddTransient<IBaseProductService<PhysicalProduct>, PhysicalProductService>();
 
 
+
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)
@@ -38,12 +40,17 @@ public class Module : IModule , IHasConfiguration
 
         var serviceProvider = appBuilder.ApplicationServices;
 
+        var productsRegistrar = appBuilder.ApplicationServices.GetRequiredService<IProductRegistrar>();
+
+        productsRegistrar.RegisterProduct<PhysicalProduct>();
+
         // Apply migrations
-        using var serviceScope = serviceProvider.CreateScope();
+        //using var serviceScope = serviceProvider.CreateScope();
 
-        using var dbContext = serviceScope.ServiceProvider.GetRequiredService<PhysicalProductDbContext>();
+        //using var dbContext = serviceScope.ServiceProvider.GetRequiredService<PhysicalProductDbContext>();
 
-        dbContext.Database.Migrate();
+        //dbContext.Database.Migrate();
+
     }
 
     public void Uninstall()

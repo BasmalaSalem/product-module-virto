@@ -16,14 +16,16 @@ namespace BaseProductModule.Web.Controllers.Api;
 public class BaseProductController : ControllerBase
 {
     private readonly IBaseProductService<Product> _productService;
+    private readonly IProductRegistrar _registerService;
 
     /// <summary>
     /// Initializes a new instance of the BaseProductController
     /// </summary>
     /// <param name="productService">The product service dependency</param>
-    public BaseProductController(IBaseProductService<Product> productService)
+    public BaseProductController(IBaseProductService<Product> productService , IProductRegistrar registerService)
     {
         _productService = productService;
+        _registerService = registerService;
     }
 
     /// <summary>
@@ -101,5 +103,14 @@ public class BaseProductController : ControllerBase
     {
         await _productService.DeleteProductAsync(id);
         return NoContent();
+    }
+
+
+    [HttpGet]
+    [Route("")]
+    public async Task<ActionResult<Product>> GetRegisteredProducts()
+    {
+        var result = await _registerService.GetRegisteredProducts();
+        return Ok(result);
     }
 }
