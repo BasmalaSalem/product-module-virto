@@ -5,6 +5,10 @@
 	<title>PhysicalProductModule</title>
 	<version>1.0.0</version>
 	<platformVersion>3.880.0</platformVersion>
+	<dependencies>
+		<id>ProductModule</id>
+		<version>1.0.0</version>
+	</dependencies>
 	<assemblyFile>PhysicalProductModule.Web.dll</assemblyFile>
 	<moduleType>PhysicalProductModule.Web.Web.Module, PhysicalProductModule.Web.Web</moduleType>
 </module>

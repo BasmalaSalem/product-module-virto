@@ -33,7 +33,7 @@ public class BaseProductService : IBaseProductService
     /// This implementation delegates to the repository's <see cref="IProductRepository.CreateAsync"/> method
     /// </remarks>
     /// <exception cref="ArgumentNullException">Thrown when the provided product is null</exception>
-    public async Task<Product> CreateProductAsync(Product product)
+    public virtual async Task<Product> CreateProductAsync(Product product)
     {
         return await _productRepository.CreateAsync(product);
     }
@@ -43,7 +43,7 @@ public class BaseProductService : IBaseProductService
     /// Converts the integer ID to string before delegating to the repository's <see cref="IProductRepository.DeleteAsync"/> method
     /// </remarks>
     /// <exception cref="ArgumentException">Thrown when the conversion to string ID fails validation</exception>
-    public async Task DeleteProductAsync(string id)
+    public virtual async Task DeleteProductAsync(string id)
     {
         await _productRepository.DeleteAsync(id);
     }
@@ -52,7 +52,7 @@ public class BaseProductService : IBaseProductService
     /// <remarks>
     /// Returns all products through the repository's <see cref="IProductRepository.GetAllAsync"/> method
     /// </remarks>
-    public async Task<List<Product>> GetAllProductsAsync()
+    public virtual async Task<List<Product>> GetAllProductsAsync()
     {
         return await _productRepository.GetAllAsync();
     }
@@ -62,7 +62,7 @@ public class BaseProductService : IBaseProductService
     /// Uses the repository's <see cref="IProductRepository.GetByIdAsync"/> method for product lookup
     /// </remarks>
     /// <exception cref="ArgumentNullException">Thrown when the id parameter is null or empty</exception>
-    public async Task<Product> GetProductByIdAsync(string id)
+    public virtual async Task<Product> GetProductByIdAsync(string id)
     {
         return await _productRepository.GetByIdAsync(id);
     }
@@ -73,7 +73,7 @@ public class BaseProductService : IBaseProductService
     /// </remarks>
     /// <exception cref="ArgumentNullException">Thrown when either the id or product parameters are null</exception>
     /// <exception cref="ArgumentException">Thrown when the id does not match the product identifier</exception>
-    public async Task<Product> UpdateProductAsync(string id, Product product)
+    public virtual async Task<Product> UpdateProductAsync(string id, Product product)
     {
         return await _productRepository.UpdateAsync(id, product);
     }
